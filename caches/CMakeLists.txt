@@ -1,11 +1,15 @@
+
+
 add_executable(
-  cache_test
-  unit_tests/cache_test.cpp
+  lfu_cache_tests
+  lfu_cache_test.cpp
 )
+
 target_link_libraries(
-  cache_test
-  GTest::gtest_main
+  lfu_cache_tests
+  PRIVATE GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(cache_test)
+
+gtest_discover_tests(lfu_cache_tests)
